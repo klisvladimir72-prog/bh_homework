@@ -6,18 +6,18 @@
         - три строки начиная с дефиса
 """
 
-valuesUser = []
-userRequests = [
+values_user = []
+user_requests = [
     "Введите ваше имя: ",
     "Введите ваше отчество: ",
     "Введите свой возраст: ",
 ]
 
-for request in userRequests:
-    valuesUser.append(input(request))
+for request in user_requests:
+    values_user.append(input(request))
 
-formatDash = "\n".join(["-" + "{}"] * len(valuesUser))
+formatDash = "\n".join(["-{}"] * len(values_user))
 
-print(*valuesUser)
-print(*valuesUser, sep=" : ")
-print(formatDash.format(*valuesUser))
+print(*values_user)
+print(*values_user, sep=" : ")
+print(formatDash.format(*values_user))

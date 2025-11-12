@@ -4,22 +4,22 @@
 
 """
 
-valuesUser = []
-userRequests = [
+values_user = []
+user_requests = [
     "Введите первое число: ",
     "Введите второе число: ",
     "Введите третье число: ",
 ]
 
-for number in userRequests:
+for number in user_requests:
     while True:
         try:
             value = float(input(number))
-            valuesUser.append(value)
+            values_user.append(value)
             break
         except ValueError:
             print("Введите число!")
 
-result = sum(valuesUser) / len(valuesUser)
+result = sum(values_user) / len(values_user)
 
 print(f"Среднее арифметическое: {result:.3f}")

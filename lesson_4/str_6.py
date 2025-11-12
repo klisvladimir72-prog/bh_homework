@@ -6,13 +6,13 @@
 
 """
 
-stringSearch = "Программа должна вывести на экран текст из данной строки заключенный между тэгами <start> и <end>."
+string_search = "Программа должна вывести на экран текст из данной строки заключенный между тэгами <start> и <end>."
 
-startIndex = "<start>"
-endIndex = "<end>"
+start_index = "<start>"
+end_index = "<end>"
 
-startString = stringSearch.find(startIndex) + len(startIndex)
-endString = stringSearch.find(endIndex)
+start_string = string_search.find(start_index) + len(start_index)
+end_string = string_search.find(end_index)
 
 
-print(stringSearch[startString:endString].strip())
+print(string_search[start_string:end_string].strip())

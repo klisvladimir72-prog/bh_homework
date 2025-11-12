@@ -10,12 +10,12 @@
 
 import re
 
-userRequest = input("Введите любую фразу: ").strip().lower()
+user_request = input("Введите любую фразу: ").strip().lower()
 
 vowelReg = r"[aeiouаеёиоуыэюя]"
 
-print(len(userRequest))
+print(len(user_request))
 
-print(len(list(userRequest.split(" "))))
+print(len(list(user_request.split(" "))))
 
-print(f"Количество гласных = {len(re.findall(vowelReg, userRequest))}")
+print(f"Количество гласных = {len(re.findall(vowelReg, user_request))}")

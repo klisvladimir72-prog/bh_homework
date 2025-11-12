@@ -8,9 +8,9 @@
 
 from datetime import datetime
 
-userName = input("Введите имя: ").strip().capitalize()
-entryDate = datetime.now().strftime("%H:%M")
+user_name = input("Введите имя: ").strip().capitalize()
+entry_date = datetime.now().strftime("%H:%M")
 
-templateEntryUser = "Юзер с именем {} заходил на сайт в {}"
+template_entry_user = "Юзер с именем {} заходил на сайт в {}"
 
-print(templateEntryUser.format(userName, entryDate))
+print(template_entry_user.format(user_name, entry_date))
