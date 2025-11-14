@@ -20,7 +20,7 @@ while len(names) < 5:
 
 names.sort()
 
-print("Список имен по афавиту: ", names)
+print("Список имен по алфавиту: ", names)
 
-if "Вася" in names:
-    print(True)
+
+print("Вася" in names)
