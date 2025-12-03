@@ -8,3 +8,30 @@
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 и так далее.  
 """
 
+
+def fibonachi_gen(max_count: int) -> int:
+    """
+    Выводит {nax_count} элементов в последовательности Фибоначчи.
+
+    Args:
+        max_count (int): число элементов последовательности Фибоначчи.
+        max_coun >=2
+    Returns:
+        yield: элемент последовательности Фибоначчи.
+    """
+    if max_count <= 2:
+        return 
+
+    a, b = 0, 1
+    count = 0
+
+    while count < max_count:
+        yield a
+        a, b = b, a + b
+        count += 1
+
+
+fib_order = fibonachi_gen(20)
+
+for num in fib_order:
+    print(num, end=" ")

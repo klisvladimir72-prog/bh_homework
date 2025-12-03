@@ -16,3 +16,34 @@ print(c10()) -> 12
 print(c10()) -> 13 
 
 """
+def counter(start:int)->int:
+    """
+    функцию счетчик которая с помощью замыкания (без глобальных переменных)
+    возвращает количество запусков функции.
+    Args:
+        start (int): начало отсчета колтчества запусков.
+
+    Returns:
+        int: возвращает колчитсво запусков.
+    """
+    
+    count = start
+    
+    def gen_new_count():
+        nonlocal count
+        count += 1
+        return count
+    
+    return gen_new_count
+
+
+c1 = counter(0)
+c10 = counter(10)
+
+print(c1())
+print(c1())
+print(c1())
+
+print(c10())
+print(c10())
+print(c10())

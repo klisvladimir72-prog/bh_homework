@@ -56,3 +56,72 @@
 # ~~~~ салат ~~~~~
 # |||| курица ||||
 # <\____________/>
+
+
+from functools import wraps
+
+
+def bread(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("</------------\>")
+        result = func(*args, **kwargs)
+        print("<\____________/>")
+        return result
+    return wrapper
+
+def tomato(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("*** помидоры ****")
+        return func(*args, **kwargs)
+    return wrapper
+
+def salad(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("~~~~ салат ~~~~~")
+        return func(*args, **kwargs)
+    return wrapper
+
+def cheese(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("^^^^^ сыр ^^^^^^")
+        return func(*args, **kwargs)
+    return wrapper
+
+def onion(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("----- лук ------")
+        return func(*args, **kwargs)
+    return wrapper
+
+
+def beef():
+    print("### говядина ###")
+
+def chicken():
+    print("|||| курица ||||")
+
+
+
+@bread
+@onion
+@tomato
+def burger():
+    beef()
+    
+    
+    
+@bread
+@cheese
+@salad    
+def chicken_burger():
+    chicken()
+    
+print("==Гамбургер==")
+burger()
+print("\n==Чикенбургер==")
+chicken_burger()
