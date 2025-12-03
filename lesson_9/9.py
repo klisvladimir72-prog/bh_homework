@@ -41,8 +41,7 @@ def dict_from_args(*args, **kwargs):
         try:
             for arg in args:
                 if not isinstance(arg, int) or isinstance(arg, bool):
-                    raise TypeError(
-                        "Все позиционные аргументы должны быть целыми")
+                    raise TypeError("Все позиционные аргументы должны быть целыми")
             args_sum = sum(args)
         except TypeError:
             raise
@@ -52,24 +51,18 @@ def dict_from_args(*args, **kwargs):
             for key in kwargs.keys():
                 if not isinstance(key, str):
                     raise TypeError(
-                        "Все аргументы - ключевые слова должны быть строками")
+                        "Все аргументы - ключевые слова должны быть строками"
+                    )
             kwargs_max_len = max(len(key) for key in kwargs.keys())
         except TypeError:
             raise
 
-    return {
-        "args_sum": args_sum,
-        "kwargs_max_len": kwargs_max_len
-    }
-
+    return {"args_sum": args_sum, "kwargs_max_len": kwargs_max_len}
 
 
 result = dict_from_args(1, 2, 3, 4, name="Alice", age=30, city="Moscow")
-result2 = dict_from_args(1, 2, 3, 4, **{2:"Alice", 4:30, 3:"Moscow"}) # поясните эту строку 
-print(result) 
-print(result2) 
-
-
-#  всегда падает ошибка еще при распаковке 
-# а при вводе  dict_from_args(1, 2, 3, 4, 2:"Alice", 4:30, 3:"Moscow")=> пишет ошибку синтаксиса
-# как быть в таких случаях и как это можно обойти если я хочу задать все-таки в других примерах числовые ключи 
+# result2 = dict_from_args(
+#     1, 2, 3, 4, **{2: "Alice", 4: 30, 3: "Moscow"}
+# )  # поясните эту строку
+print(result)
+# print(result2)

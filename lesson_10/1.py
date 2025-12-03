@@ -1,10 +1,10 @@
-'''
-Добавить несколько черепах 
-    - или сразу 
+"""
+Добавить несколько черепах
+    - или сразу
     * или в течении игры по одной через определенное количество кликов
     - на каждой забиндить клик через одну и туже функцию cath
 
-'''
+"""
 
 from turtle import *
 from random import randint
@@ -17,16 +17,6 @@ height_screen = 600
 
 
 def catch(x, y):
-    """
-    Ищет черепаху по клику.
-
-    Добавляет новую черепаху после 5 кликов.
-
-    Args:
-        x (int): координаты клика по полю
-        y (int): координаты клика по полю
-    """
-
     global click_count
     click_count += 1
 
@@ -37,8 +27,10 @@ def catch(x, y):
             break
 
     if clicked_turtle:
-        clicked_turtle.goto(randint(-(width_screen / 2), width_screen / 2),
-                            randint(-(height_screen / 2), height_screen / 2))
+        clicked_turtle.goto(
+            randint(-(width_screen // 2), width_screen // 2),
+            randint(-(height_screen // 2), height_screen // 2),
+        )
         clicked_turtle.left(randint(0, 360))
 
         if click_count % 5 == 0:
@@ -50,10 +42,9 @@ def add_new_turtle():
     Создание новой черепахи со случайными параметрами цвета и поворота.
     """
     global ts
-    new_turtle = Turtle('turtle')
+    new_turtle = Turtle("turtle")
     new_turtle.speed(10)
-    new_turtle.color((randint(0, 255), randint(
-        0, 255), randint(0, 255)))
+    new_turtle.color((randint(0, 255), randint(0, 255), randint(0, 255)))
     new_turtle.left(randint(0, 360))
     new_turtle.onclick(catch)
     ts.append(new_turtle)
@@ -68,7 +59,7 @@ colormode(255)
 
 
 for i in range(3):
-    t = Turtle('turtle')
+    t = Turtle("turtle")
     t.speed(6)
     t.color((randint(0, 255), randint(0, 255), randint(0, 255)))
     t.left(randint(0, 360))
@@ -79,11 +70,11 @@ for i in range(3):
 while True:
     for t in ts:
         t.forward(3)
-        
+
         if abs(t.xcor()) > width_screen / 2:
             t.left(100)
         if abs(t.ycor()) > height_screen / 2:
             t.left(100)
-        
+
 
 mainloop()
