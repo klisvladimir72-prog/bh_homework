@@ -43,7 +43,7 @@ def parse_grades(grades_str: str):
     return result
 
 
-# разираем файл
+# разбираем файл
 def read_file(file_name):
     data = {}
 
