@@ -123,7 +123,7 @@ class User:
                 f"Статус блокировки изменен для пользователя {self._login}: {old_status} -> {value}"
             )
 
-    def check_subscr(self, date: Optional[datetime] = None) -> dict:
+    def check_subscr(self, date: datetime = None) -> dict:
         """
         Проверяет действительность подписки на указанную дату.
 
@@ -156,7 +156,7 @@ class User:
             "days_left": days_left,
         }
 
-    def change_pass(self, new_password: Optional[str] = None) -> None:
+    def change_pass(self, new_password: str = None) -> None:
         """
         Изменяет пароль пользователя.
 
