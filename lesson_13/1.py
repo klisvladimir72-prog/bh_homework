@@ -1,13 +1,12 @@
 import re
 from datetime import datetime, timedelta
-from typing import Optional
 import random
 import string
 import logging
 
 
 class User:
-    def __init__(self, name: str, login: str, password: Optional[str] = None):
+    def __init__(self, name: str, login: str, password: str = None):
         """
         Создает объект User с валидацией данных.
 
